@@ -41,14 +41,15 @@ fetch('data.json')
         // إضافة المناطق
         data.areas.forEach(area => {
             const polygon = L.polygon(area.coordinates, {
-                color: '#1B4F72',
-                weight: 4,
-                fillOpacity: 0.02,
-                opacity: 0.85,
+                color: '#154360',
+                weight: 5,
+                fillOpacity: 0.03,
+                opacity: 0.9,
                 dashArray: '',
-                smoothFactor: 1.5,
+                smoothFactor: 1.2,
                 lineCap: 'round',
-                lineJoin: 'round'
+                lineJoin: 'round',
+                className: 'area-border'
             }).addTo(areasLayer);
 
             // حساب مركز المضلع بشكل دقيق
@@ -59,10 +60,11 @@ fetch('data.json')
             const label = L.marker(center, {
                 icon: L.divIcon({
                     className: 'area-label',
-                    html: `<div class="area-name">${area.name}</div>`,
-                    iconSize: [0, 0],
-                    iconAnchor: [0, 0]
-                })
+                    html: `<div class="area-name"><span class="area-text">${area.name}</span></div>`,
+                    iconSize: [200, 40],
+                    iconAnchor: [100, 20]
+                }),
+                zIndexOffset: 1000
             }).addTo(areaLabels);
 
             // إضافة للبحث
@@ -78,25 +80,30 @@ fetch('data.json')
         // تحسين أداء عرض المدن والمواقع
         const addPoint = (item, type) => {
             const point = L.circleMarker(item.coordinates, {
-                radius: type === 'city' ? 8 : 6,
-                fillColor: type === 'city' ? '#2980B9' : '#C0392B',
+                radius: type === 'city' ? 9 : 7,
+                fillColor: type === 'city' ? '#2471A3' : '#A93226',
                 color: '#ffffff',
-                weight: 2.5,
+                weight: 3,
                 opacity: 1,
-                fillOpacity: 0.9
+                fillOpacity: 0.9,
+                className: 'location-point',
+                zIndexOffset: 900
             }).addTo(pointsLayer);
 
             const label = L.marker(item.coordinates, {
                 icon: L.divIcon({
                     className: 'location-label',
-                    html: `<div class="location-name">${item.name}</div>${type === 'city' ? 
-                          '<div class="location-info">مدينة</div>' : 
-                          item.type === 'historical' ? '<div class="location-info">موقع تاريخي</div>' : 
-                          item.type === 'religious' ? '<div class="location-info">موقع ديني</div>' : 
-                          '<div class="location-info">معلم سياحي</div>'}`,
-                    iconSize: [150, 45],
-                    iconAnchor: [75, -8]
-                })
+                    html: `<div class="location-container">
+                            <div class="location-name">${item.name}</div>
+                            <div class="location-info">${type === 'city' ? 'مدينة' : 
+                              item.type === 'historical' ? 'موقع تاريخي' : 
+                              item.type === 'religious' ? 'موقع ديني' : 
+                              'معلم سياحي'}</div>
+                          </div>`,
+                    iconSize: [200, 50],
+                    iconAnchor: [100, type === 'city' ? -15 : -12]
+                }),
+                zIndexOffset: 950
             }).addTo(pointsLayer);
 
             point.bindPopup(`
