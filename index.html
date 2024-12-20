@@ -82,6 +82,14 @@
             background-color: rgba(0, 0, 0, 0.05);
         }
 
+        .area-border {
+            filter: drop-shadow(0 0 2px rgba(21, 67, 96, 0.3));
+        }
+
+        .location-point {
+            filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.2));
+        }
+
         .area-label {
             background: transparent;
             border: none;
@@ -90,15 +98,17 @@
         }
 
         .area-name {
-            color: #1B4F72;
-            font-size: 20px;
-            font-weight: 700;
+            color: #154360;
+            font-size: 22px;
+            font-weight: 800;
             text-align: center;
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9),
-                         -1px -1px 4px rgba(255, 255, 255, 0.9);
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 1),
+                         -1px -1px 4px rgba(255, 255, 255, 1),
+                         1px -1px 4px rgba(255, 255, 255, 1),
+                         -1px 1px 4px rgba(255, 255, 255, 1);
             white-space: nowrap;
-            padding: 6px 12px;
-            letter-spacing: 0.5px;
+            padding: 8px 16px;
+            letter-spacing: 0.7px;
         }
 
         .location-label {
@@ -109,31 +119,44 @@
         }
 
         .location-name {
-            color: #2C3E50;
-            font-size: 15px;
-            font-weight: 600;
+            color: #1B4F72;
+            font-size: 16px;
+            font-weight: 700;
             text-align: center;
-            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9),
-                         -1px -1px 3px rgba(255, 255, 255, 0.9);
+            text-shadow: 2px 2px 3px rgba(255, 255, 255, 1),
+                         -1px -1px 3px rgba(255, 255, 255, 1),
+                         1px -1px 3px rgba(255, 255, 255, 1),
+                         -1px 1px 3px rgba(255, 255, 255, 1);
             white-space: nowrap;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
+            letter-spacing: 0.5px;
         }
 
         .location-info {
-            font-size: 13px;
-            color: #34495E;
+            font-size: 14px;
+            color: #2C3E50;
             text-align: center;
-            font-weight: 500;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 1);
+            letter-spacing: 0.3px;
         }
 
         @media (max-width: 768px) {
-            .search-container {
-                right: 20px;
-                left: 20px;
-                max-width: calc(100% - 40px);
+            .area-name {
+                font-size: 20px;
+                padding: 6px 12px;
             }
 
+            .location-name {
+                font-size: 15px;
+            }
+
+            .location-info {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
             .area-name {
                 font-size: 18px;
                 padding: 4px 8px;
@@ -145,27 +168,6 @@
 
             .location-info {
                 font-size: 12px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .search-container {
-                top: 10px;
-                right: 10px;
-                left: 10px;
-            }
-
-            .area-name {
-                font-size: 16px;
-                padding: 3px 6px;
-            }
-
-            .location-name {
-                font-size: 13px;
-            }
-
-            .location-info {
-                font-size: 11px;
             }
         }
 

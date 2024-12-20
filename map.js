@@ -41,14 +41,15 @@ fetch('data.json')
         // إضافة المناطق
         data.areas.forEach(area => {
             const polygon = L.polygon(area.coordinates, {
-                color: '#1B4F72',
-                weight: 4,
-                fillOpacity: 0.02,
-                opacity: 0.85,
+                color: '#154360',
+                weight: 5.5,
+                fillOpacity: 0.03,
+                opacity: 0.9,
                 dashArray: '',
-                smoothFactor: 1.5,
+                smoothFactor: 1.2,
                 lineCap: 'round',
-                lineJoin: 'round'
+                lineJoin: 'round',
+                className: 'area-border'
             }).addTo(areasLayer);
 
             // حساب مركز المضلع بشكل دقيق
@@ -78,12 +79,13 @@ fetch('data.json')
         // تحسين أداء عرض المدن والمواقع
         const addPoint = (item, type) => {
             const point = L.circleMarker(item.coordinates, {
-                radius: type === 'city' ? 8 : 6,
-                fillColor: type === 'city' ? '#2980B9' : '#C0392B',
+                radius: type === 'city' ? 9 : 7,
+                fillColor: type === 'city' ? '#2471A3' : '#A93226',
                 color: '#ffffff',
-                weight: 2.5,
+                weight: 3,
                 opacity: 1,
-                fillOpacity: 0.9
+                fillOpacity: 1,
+                className: 'location-point'
             }).addTo(pointsLayer);
 
             const label = L.marker(item.coordinates, {
@@ -94,8 +96,8 @@ fetch('data.json')
                           item.type === 'historical' ? '<div class="location-info">موقع تاريخي</div>' : 
                           item.type === 'religious' ? '<div class="location-info">موقع ديني</div>' : 
                           '<div class="location-info">معلم سياحي</div>'}`,
-                    iconSize: [150, 45],
-                    iconAnchor: [75, -8]
+                    iconSize: [180, 50],
+                    iconAnchor: [90, -10]
                 })
             }).addTo(pointsLayer);
 
