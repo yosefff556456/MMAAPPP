@@ -60,9 +60,9 @@ fetch('data.json')
             const label = L.marker(center, {
                 icon: L.divIcon({
                     className: 'area-label',
-                    html: `<div class="area-name"><span class="area-text">${area.name}</span></div>`,
-                    iconSize: [200, 40],
-                    iconAnchor: [100, 20]
+                    html: `<div class="area-name">${area.name}</div>`,
+                    iconSize: [240, 40],
+                    iconAnchor: [120, 20]
                 }),
                 zIndexOffset: 1000
             }).addTo(areaLabels);
@@ -100,8 +100,8 @@ fetch('data.json')
                               item.type === 'religious' ? 'موقع ديني' : 
                               'معلم سياحي'}</div>
                           </div>`,
-                    iconSize: [200, 50],
-                    iconAnchor: [100, type === 'city' ? -15 : -12]
+                    iconSize: [200, 60],
+                    iconAnchor: [100, -10]
                 }),
                 zIndexOffset: 950
             }).addTo(pointsLayer);
