@@ -82,83 +82,126 @@
             background-color: rgba(0, 0, 0, 0.05);
         }
 
+        .area-border {
+            filter: drop-shadow(0 0 2px rgba(21, 67, 96, 0.3));
+        }
+
         .area-label {
             background: transparent;
             border: none;
-            color: #34495E;
-            font-size: 18px;
-            font-weight: 600;
-            text-align: center;
-            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
-            white-space: nowrap;
             pointer-events: none;
             width: auto !important;
-            padding: 4px 8px;
+            transform-origin: center center;
         }
 
-        .location-label {
-            background: transparent;
-            border: none;
-            color: #2C3E50;
-            font-size: 14px;
-            font-weight: 500;
+        .area-name {
+            color: #154360;
+            font-size: 24px;
+            font-weight: 800;
             text-align: center;
-            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 1),
+                        -2px -2px 4px rgba(255, 255, 255, 1),
+                        2px -2px 4px rgba(255, 255, 255, 1),
+                        -2px 2px 4px rgba(255, 255, 255, 1);
             white-space: nowrap;
-            pointer-events: none;
-            width: auto !important;
+            transform: translateX(-50%);
+            position: absolute;
+            left: 50%;
+            width: 100%;
+        }
+
+        .location-point {
+            filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+            z-index: 900 !important;
+        }
+
+        .location-container {
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            position: relative;
+            transform: translateX(-50%);
+            min-width: 100px;
+            max-width: 180px;
+            margin: 0 auto;
+            margin-top: 8px;
+        }
+
+        .location-name {
+            color: #2C3E50;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1px;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .location-info {
             font-size: 12px;
-            color: #7F8C8D;
-            margin-top: 2px;
-            font-weight: normal;
+            color: #34495E;
+            text-align: center;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 1200px) {
+            .area-name {
+                font-size: 22px;
+            }
         }
 
         @media (max-width: 768px) {
-            .search-container {
-                top: 10px;
-                right: 50px;
-                left: 10px;
+            .area-name {
+                font-size: 20px;
             }
 
-            .search-input {
-                padding: 8px;
+            .location-container {
+                padding: 3px 8px;
+                margin-top: 6px;
+            }
+
+            .location-name {
                 font-size: 14px;
             }
 
-            .area-label {
-                font-size: 16px;
-            }
-
-            .location-label {
-                font-size: 12px;
+            .location-info {
+                font-size: 11px;
             }
         }
 
-        /* تحسين أداء التحريك */
+        @media (max-width: 480px) {
+            .area-name {
+                font-size: 18px;
+            }
+
+            .location-container {
+                padding: 2px 6px;
+                margin-top: 5px;
+            }
+
+            .location-name {
+                font-size: 13px;
+            }
+
+            .location-info {
+                font-size: 10px;
+            }
+        }
+
+        /* تحسين ثبات النصوص */
         .leaflet-marker-icon {
-            will-change: transform;
+            transform-origin: center center !important;
         }
 
-        /* تحسين التمرير */
-        .search-results::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .search-results::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-        }
-
-        .search-results::-webkit-scrollbar-thumb {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 4px;
-        }
-
-        .search-results::-webkit-scrollbar-thumb:hover {
-            background: rgba(0, 0, 0, 0.3);
+        .leaflet-marker-icon.area-label,
+        .leaflet-marker-icon.location-label {
+            margin-left: 0 !important;
+            margin-top: 0 !important;
         }
 
         .legend {
