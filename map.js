@@ -41,10 +41,10 @@ fetch('data.json')
         // إضافة المناطق
         data.areas.forEach(area => {
             const polygon = L.polygon(area.coordinates, {
-                color: '#34495E',
-                weight: 3.5,
-                fillOpacity: 0,
-                opacity: 0.8,
+                color: '#1B4F72',
+                weight: 4,
+                fillOpacity: 0.02,
+                opacity: 0.85,
                 dashArray: '',
                 smoothFactor: 1.5,
                 lineCap: 'round',
@@ -59,7 +59,7 @@ fetch('data.json')
             const label = L.marker(center, {
                 icon: L.divIcon({
                     className: 'area-label',
-                    html: `<div style="width: ${Math.min(bounds.getEast() - bounds.getWest(), 200)}px;">${area.name}</div>`,
+                    html: `<div class="area-name">${area.name}</div>`,
                     iconSize: [0, 0],
                     iconAnchor: [0, 0]
                 })
@@ -78,10 +78,10 @@ fetch('data.json')
         // تحسين أداء عرض المدن والمواقع
         const addPoint = (item, type) => {
             const point = L.circleMarker(item.coordinates, {
-                radius: type === 'city' ? 7 : 5,
-                fillColor: type === 'city' ? '#3498DB' : '#E74C3C',
+                radius: type === 'city' ? 8 : 6,
+                fillColor: type === 'city' ? '#2980B9' : '#C0392B',
                 color: '#ffffff',
-                weight: 2,
+                weight: 2.5,
                 opacity: 1,
                 fillOpacity: 0.9
             }).addTo(pointsLayer);
@@ -89,13 +89,13 @@ fetch('data.json')
             const label = L.marker(item.coordinates, {
                 icon: L.divIcon({
                     className: 'location-label',
-                    html: `${item.name}${type === 'city' ? 
+                    html: `<div class="location-name">${item.name}</div>${type === 'city' ? 
                           '<div class="location-info">مدينة</div>' : 
                           item.type === 'historical' ? '<div class="location-info">موقع تاريخي</div>' : 
                           item.type === 'religious' ? '<div class="location-info">موقع ديني</div>' : 
                           '<div class="location-info">معلم سياحي</div>'}`,
-                    iconSize: [120, 40],
-                    iconAnchor: [60, -5]
+                    iconSize: [150, 45],
+                    iconAnchor: [75, -8]
                 })
             }).addTo(pointsLayer);
 
