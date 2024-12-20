@@ -12,12 +12,12 @@ L.control.zoom({
 }).addTo(map);
 
 // إضافة طبقة الخريطة الأساسية
-const baseLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png', {
+const baseLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     maxZoom: 12,
     minZoom: 2,
-    attribution: '© OpenStreetMap, © CartoDB',
-    updateWhenIdle: true,
-    keepBuffer: 2
+    attribution: '© Esri',
+    updateWhenIdle: true, // تحديث الخريطة فقط عند التوقف عن التحريك
+    keepBuffer: 2 // تحسين الأداء عند التحريك
 }).addTo(map);
 
 // تخزين البيانات في الذاكرة المؤقتة
@@ -41,15 +41,12 @@ fetch('data.json')
         // إضافة المناطق
         data.areas.forEach(area => {
             const polygon = L.polygon(area.coordinates, {
-                color: '#154360',
-                weight: 5,
-                fillOpacity: 0.03,
-                opacity: 0.9,
-                dashArray: '',
-                smoothFactor: 1.2,
-                lineCap: 'round',
-                lineJoin: 'round',
-                className: 'area-border'
+                color: '#0078A8',
+                weight: 3,
+                fillOpacity: 0,
+                opacity: 0.8,
+                dashArray: '8, 12',
+                smoothFactor: 1.5
             }).addTo(areasLayer);
 
             // حساب مركز المضلع بشكل دقيق
@@ -60,11 +57,10 @@ fetch('data.json')
             const label = L.marker(center, {
                 icon: L.divIcon({
                     className: 'area-label',
-                    html: `<div class="area-name">${area.name}</div>`,
-                    iconSize: [240, 40],
-                    iconAnchor: [120, 20]
-                }),
-                zIndexOffset: 1000
+                    html: `<div style="width: ${Math.min(bounds.getEast() - bounds.getWest(), 200)}px;">${area.name}</div>`,
+                    iconSize: [0, 0],
+                    iconAnchor: [0, 0]
+                })
             }).addTo(areaLabels);
 
             // إضافة للبحث
@@ -80,30 +76,23 @@ fetch('data.json')
         // تحسين أداء عرض المدن والمواقع
         const addPoint = (item, type) => {
             const point = L.circleMarker(item.coordinates, {
-                radius: type === 'city' ? 9 : 7,
-                fillColor: type === 'city' ? '#2471A3' : '#A93226',
-                color: '#ffffff',
-                weight: 3,
+                radius: type === 'city' ? 6 : 5,
+                fillColor: '#ffffff',
+                color: type === 'city' ? '#000000' : '#ff0000',
+                weight: 2.5,
                 opacity: 1,
-                fillOpacity: 0.9,
-                className: 'location-point',
-                zIndexOffset: 900
+                fillOpacity: 0.9
             }).addTo(pointsLayer);
 
             const label = L.marker(item.coordinates, {
                 icon: L.divIcon({
                     className: 'location-label',
-                    html: `<div class="location-container">
-                            <div class="location-name">${item.name}</div>
-                            <div class="location-info">${type === 'city' ? 'مدينة' : 
-                              item.type === 'historical' ? 'موقع تاريخي' : 
-                              item.type === 'religious' ? 'موقع ديني' : 
-                              'معلم سياحي'}</div>
-                          </div>`,
-                    iconSize: [200, 60],
-                    iconAnchor: [100, -10]
-                }),
-                zIndexOffset: 950
+                    html: `${item.name}<div class="location-info">${type === 'city' ? item.population : 
+                          item.type === 'historical' ? 'موقع تاريخي' : 
+                          item.type === 'religious' ? 'موقع ديني' : 'معلم سياحي'}</div>`,
+                    iconSize: [120, 40],
+                    iconAnchor: [60, -10]
+                })
             }).addTo(pointsLayer);
 
             point.bindPopup(`
