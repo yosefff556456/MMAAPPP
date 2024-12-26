@@ -1,186 +1,188 @@
-[
-  {
-    "Kingdom": {
-      "Arabic": "حيوانات",
-      "English": "Animalia"
-    },
-    "Phylum": {
-      "Arabic": "حبليات",
-      "English": "Chordata"
-    },
-    "Class": {
-      "Arabic": "ثدييات",
-      "English": "Mammalia"
-    },
-    "Order": {
-      "Arabic": "لواحم",
-      "English": "Carnivora"
-    },
-    "Family": {
-      "Arabic": "قططيات",
-      "English": "Felidae"
-    },
-    "Genus": {
-      "Arabic": "نمر",
-      "English": "Panthera"
-    },
-    "Species": {
-      "Arabic": "أسد",
-      "English": "Panthera leo",
-      "LocalNames": {
-        "Arabic": [
-          "أسد",
-          "الأسد الملكي"
-        ],
-        "English": [
-          "Lion",
-          "King of the Jungle"
-        ],
-        "Regional": [
+{
+  "taxonomy": [
+    {
+      "Kingdom": {
+        "Arabic": "حيوانات",
+        "English": "Animalia"
+      },
+      "Phylum": {
+        "Arabic": "حبليات",
+        "English": "Chordata"
+      },
+      "Class": {
+        "Arabic": "ثدييات",
+        "English": "Mammalia"
+      },
+      "Order": {
+        "Arabic": "لواحم",
+        "English": "Carnivora"
+      },
+      "Family": {
+        "Arabic": "كلبيات",
+        "English": "Canidae"
+      },
+      "Genus": {
+        "Arabic": "كلب",
+        "English": "Canis"
+      },
+      "Species": {
+        "Arabic": "الذئب الرمادي",
+        "English": "Canis lupus",
+        "LocalNames": {
+          "Arabic": [
+            "الذئب الرمادي",
+            "الذئب الأوراسي"
+          ],
+          "English": [
+            "Grey Wolf",
+            "Eurasian Wolf"
+          ],
+          "Regional": [
+            {
+              "Name": "ذئب",
+              "Region": "الشرق الأوسط",
+              "Language": "Arabic"
+            },
+            {
+              "Name": "волк",
+              "Region": "روسيا",
+              "Language": "Russian"
+            }
+          ]
+        },
+        "Description": {
+          "Arabic": "حيوان ثديي مفترس من فصيلة الكلبيات، يعيش ويصطاد في جماعات",
+          "English": "A large canine predator that lives and hunts in packs"
+        },
+        "Habitat": {
+          "Arabic": "الغابات والسهول المفتوحة في أوراسيا وأمريكا الشمالية",
+          "English": "Forests and open plains across Eurasia and North America"
+        },
+        "References": [
           {
-            "Name": "lion",
-            "Region": "فرنسا",
-            "Language": "French"
+            "Title": "موسوعة الحياة",
+            "URL": "https://eol.org/pages/328607",
+            "Type": "reference"
           },
           {
-            "Name": "лев",
-            "Region": "روسيا",
-            "Language": "Russian"
+            "Title": "صور الذئب الرمادي",
+            "URL": "https://www.nationalgeographic.com/animals/mammals/g/gray-wolf/",
+            "Type": "image"
           }
-        ]
-      },
-      "Description": {
-        "Arabic": "حيوان ثديي مفترس من الفصيلة القططية، يعيش في السهول والغابات المفتوحة",
-        "English": "A large predatory mammal of the Felidae family, living in open plains and forests"
-      },
-      "Habitat": {
-        "Arabic": "السهول والغابات المفتوحة في أفريقيا وآسيا",
-        "English": "Open plains and forests across Africa and Asia"
-      },
-      "References": [
-        {
-          "Title": "موسوعة الحيوانات",
-          "URL": "https://en.wikipedia.org/wiki/Panthera_leo",
-          "Type": "reference"
-        },
-        {
-          "Title": "صور الأسد",
-          "URL": "https://www.google.com/search?q=Panthera+leo&tbm=isch",
-          "Type": "image"
+        ],
+        "Media": {
+          "Images": [
+            {
+              "URL": "https://example.com/wolf1.jpg",
+              "Caption(Ar)": "ذئب رمادي بالغ",
+              "Caption(En)": "Adult Grey Wolf",
+              "Credit": "National Geographic",
+              "License": "CC BY-SA 4.0"
+            }
+          ],
+          "Videos": [
+            {
+              "URL": "https://example.com/wolf-video.mp4",
+              "Caption(Ar)": "ذئب يصطاد فريسته",
+              "Caption(En)": "Wolf hunting its prey",
+              "Credit": "Wildlife Documentary",
+              "Duration": "00:02:30"
+            }
+          ]
         }
-      ],
-      "Media": {
-        "Images": [
-          {
-            "URL": "https://example.com/lion1.jpg",
-            "Caption(Ar)": "أسد",
-            "Caption(En)": "Lion",
-            "Credit": "National Geographic",
-            "License": "CC BY-SA 4.0"
-          }
-        ],
-        "Videos": [
-          {
-            "URL": "https://example.com/lion-video.mp4",
-            "Caption(Ar)": "أسد يصطاد فريسته",
-            "Caption(En)": "Lion hunting its prey",
-            "Credit": "Wildlife Documentary",
-            "Duration": "00:02:30"
-          }
-        ]
       }
-    }
-  },
-  {
-    "Kingdom": {
-      "Arabic": "حيوانات",
-      "English": "Animalia"
     },
-    "Phylum": {
-      "Arabic": "حبليات",
-      "English": "Chordata"
-    },
-    "Class": {
-      "Arabic": "ثدييات",
-      "English": "Mammalia"
-    },
-    "Order": {
-      "Arabic": "لواحم",
-      "English": "Carnivora"
-    },
-    "Family": {
-      "Arabic": "كلبيات",
-      "English": "Canidae"
-    },
-    "Genus": {
-      "Arabic": "كلب",
-      "English": "Canis"
-    },
-    "Species": {
-      "Arabic": "الذئب الرمادي",
-      "English": "Canis lupus",
-      "LocalNames": {
-        "Arabic": [
-          "الذئب الرمادي",
-          "الذئب الأوراسي"
-        ],
-        "English": [
-          "Grey Wolf",
-          "Eurasian Wolf"
-        ],
-        "Regional": [
+    {
+      "Kingdom": {
+        "Arabic": "حيوانات",
+        "English": "Animalia"
+      },
+      "Phylum": {
+        "Arabic": "حبليات",
+        "English": "Chordata"
+      },
+      "Class": {
+        "Arabic": "ثدييات",
+        "English": "Mammalia"
+      },
+      "Order": {
+        "Arabic": "لواحم",
+        "English": "Carnivora"
+      },
+      "Family": {
+        "Arabic": "قططيات",
+        "English": "Felidae"
+      },
+      "Genus": {
+        "Arabic": "نمر",
+        "English": "Panthera"
+      },
+      "Species": {
+        "Arabic": "أسد",
+        "English": "Panthera leo",
+        "LocalNames": {
+          "Arabic": [
+            "أسد",
+            "الأسد الملكي"
+          ],
+          "English": [
+            "Lion",
+            "King of the Jungle"
+          ],
+          "Regional": [
+            {
+              "Name": "lion",
+              "Region": "فرنسا",
+              "Language": "French"
+            },
+            {
+              "Name": "лев",
+              "Region": "روسيا",
+              "Language": "Russian"
+            }
+          ]
+        },
+        "Description": {
+          "Arabic": "حيوان ثديي مفترس من الفصيلة القططية، يعيش في السهول والغابات المفتوحة",
+          "English": "A large predatory mammal of the Felidae family, living in open plains and forests"
+        },
+        "Habitat": {
+          "Arabic": "السهول والغابات المفتوحة في أفريقيا وآسيا",
+          "English": "Open plains and forests across Africa and Asia"
+        },
+        "References": [
           {
-            "Name": "ذئب",
-            "Region": "الشرق الأوسط",
-            "Language": "Arabic"
+            "Title": "موسوعة الحيوانات",
+            "URL": "https://en.wikipedia.org/wiki/Panthera_leo",
+            "Type": "reference"
           },
           {
-            "Name": "волк",
-            "Region": "روسيا",
-            "Language": "Russian"
-          }
-        ]
-      },
-      "Description": {
-        "Arabic": "حيوان ثديي مفترس من فصيلة الكلبيات، يعيش ويصطاد في جماعات",
-        "English": "A large canine predator that lives and hunts in packs"
-      },
-      "Habitat": {
-        "Arabic": "الغابات والسهول المفتوحة في أوراسيا وأمريكا الشمالية",
-        "English": "Forests and open plains across Eurasia and North America"
-      },
-      "References": [
-        {
-          "Title": "موسوعة الحياة",
-          "URL": "https://eol.org/pages/328607",
-          "Type": "reference"
-        },
-        {
-          "Title": "صور الذئب الرمادي",
-          "URL": "https://www.nationalgeographic.com/animals/mammals/g/gray-wolf/",
-          "Type": "image"
-        }
-      ],
-      "Media": {
-        "Images": [
-          {
-            "URL": "https://example.com/wolf1.jpg",
-            "Caption(Ar)": "ذئب رمادي بالغ",
-            "Caption(En)": "Adult Grey Wolf",
-            "Credit": "National Geographic",
-            "License": "CC BY-SA 4.0"
+            "Title": "صور الأسد",
+            "URL": "https://www.google.com/search?q=Panthera+leo&tbm=isch",
+            "Type": "image"
           }
         ],
-        "Videos": [
-          {
-            "URL": "https://example.com/wolf-video.mp4",
-            "Caption(Ar)": "ذئب يصطاد فريسته",
-            "Caption(En)": "Wolf hunting its prey",
-            "Credit": "Wildlife Documentary",
-            "Duration": "00:02:30"
-          }
-        ]
+        "Media": {
+          "Images": [
+            {
+              "URL": "https://example.com/lion1.jpg",
+              "Caption(Ar)": "أسد",
+              "Caption(En)": "Lion",
+              "Credit": "National Geographic",
+              "License": "CC BY-SA 4.0"
+            }
+          ],
+          "Videos": [
+            {
+              "URL": "https://example.com/lion-video.mp4",
+              "Caption(Ar)": "أسد يصطاد فريسته",
+              "Caption(En)": "Lion hunting its prey",
+              "Credit": "Wildlife Documentary",
+              "Duration": "00:02:30"
+            }
+          ]
+        }
       }
     }
-  }
-]
+  ]
+}
